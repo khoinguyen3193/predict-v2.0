@@ -7,7 +7,7 @@
 a{
   text-decoration: none !important;
 }
-.nav-bar{
+/* .navbar{
   background: #f0f8ff;
 }
 nav{
@@ -19,17 +19,42 @@ nav{
   background: #f0f8ff;
 }
 /* still issue with img  */
-nav .icon{
+/* nav .icon{
   align-items: center;
   display: flex;
-}
-.avatar{
+} */ 
+/* .avatar{
   height: 100%;
   margin-top: 16px;
   margin-right: 10px;
+  text-align: center;
 }
-
+.avatar .avatar-detail{
+  display: inline-block;
+  font-size: 18px;
+  line-height: 30px;
+  padding-top: -10px;
+} */
+/* new-nav */
+nav{
+  background: #f0f8ff;
+}
+/* /new-nav */
+.avatar{
+  display: flex;
+  font-size: 24px;
+}
+.avatar img{
+  margin-top: 34px;
+  height: 100%;
+}
+.avatar .avatar-detail{
+  line-height: 100px;
+  padding-left: 5px;
+  letter-spacing: 1px;
+}
 nav .menu{
+  line-height: 100px;
   display: flex;
   align-items: center;
 }
@@ -39,7 +64,7 @@ nav .menu ul{
 nav .menu > ul > li{
   height: 100%;
   display: inline-block;
-  margin: 0 15px;
+  margin: 0 10px;
   font-weight: bold;
 }
 nav .menu > ul > li > a{
@@ -71,7 +96,7 @@ nav .menu .btn{
 .menu .menu-home{
   position: relative;
 }
-.menu .menu-home .sub-menu{
+.sub-menu{
   position: absolute;
   bottom: -360px;
   left: -50%;
@@ -80,10 +105,37 @@ nav .menu .btn{
   background: white;
   z-index: 1;
 }
-.menu .menu-home .sub-menu > ul{
+/* searchbox */
+.search-box{
+  display: none;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(40, 40, 40, 0.5);
+  z-index: 1;
+}
+.search-box input{
+  position: absolute;
+  outline: none;
+  top: 50%;
+  left: 45%;
+  border: 0;
+  border-radius: 20px;
+  font-size: 30px;
+  padding: 10px;
+}
+.search-box i{
+  cursor: pointer;
+  position: absolute;
+  top: 30%;
+  right: 10%;
+  font-size: 30px;
+  color: white;
+}
+.sub-menu > ul{
   position: relative;
 }
-.menu .menu-home .sub-menu > ul::before{
+.sub-menu > ul::before{
   content: "";
   position: absolute;
   width: 10px;
@@ -95,13 +147,13 @@ nav .menu .btn{
   border-bottom: 10px solid red;
   z-index: 2;
 }
-.menu .menu-home .sub-menu > ul > li{
+.sub-menu > ul > li{
   cursor: pointer;
   display: block;
   line-height: 40px;
   padding-left: 20px;
 }
-.menu .menu-home .sub-menu > ul > li:hover{
+.sub-menu > ul > li:hover{
   background: #00dadc;
 }
 /* nav-dropdown */
@@ -195,7 +247,6 @@ margin-right: 10px;
   left: 48%;
 }
 .intro div > div > .description{
-  padding: 0 320px;
   line-height: 20px;
   font-weight: bold;
   color: #98a5b2;
@@ -257,8 +308,6 @@ margin-right: 10px;
   padding-top: 100px;
   font-size: 24px;
   font-weight: bold;
-  padding-left: 265px;
-  padding-right: 265px;
   line-height: 30px;
   padding-bottom: 50px;
 }
@@ -275,7 +324,7 @@ margin-right: 10px;
   font-weight: bold;
   color: #98a5b2;
   font-size: 14px;
-  padding: 0 300px 100px 300px;
+  padding-bottom: 100px;
   line-height: 20px;
 }
 .slider .mid{
@@ -304,17 +353,16 @@ margin-right: 10px;
   height: 539px;
 }
 .left-people{
+  height: 339px;
+ background: url("../images/people.jpg"); 
+ background-repeat: no-repeat;
   padding: 0 !important;
 }
 .left-people img{
-  width: 100%;
 }
-.slider .people-content{
-  position: absolute;
-  width: 50%;
-  height: 75%;
-  bottom: 0;
-  right: 0;
+.left-people .people-content{
+  margin-left: 50%;
+  margin-top: 25%;
 }
 .people-content .title{
   text-align: left;
@@ -333,6 +381,7 @@ font-weight: bold;
   color: white;
 }
 .people-content-right{
+  height: 339px;
   background: url("../images/people-content-right.jpg");
   background-repeat: no-repeat;
 }
@@ -376,8 +425,9 @@ color: white;
   height: 2px;
   background: #00dadc;
 }
-.pricing .header .description{
-  padding: 0 310px 100px 310px;
+.pricing  .description p{
+  text-align: center;
+  padding-bottom: 100px;
   line-height: 20px;
   font-weight: bold;
   color: #a6a7a8;
@@ -572,7 +622,8 @@ line-height: 18px;
   text-align: center;
 }
 .subcribe .title{
-  padding: 120px 300px 40px 300px;
+  padding-top: 120px;
+  padding-bottom: 40px;
   font-size: 24px;
   line-height: 30px;
   font-weight: bold;
@@ -668,16 +719,14 @@ footer .social ul li{
   color: #98a5b2;
   padding-right: 10px;
 }
-/* footer .social .title{
-  padding-bottom: 30px;
-}
-footer .social i{
-  color: #98a5b2;
-  font-size: 24px;
-} */
 .copy-right{
   text-align: center;
   font-weight: bold;
   color: #98a5b2;
   line-height: 70px;
+}
+@media all and (max-width : 1920px){
+  .wrapper{
+    width: 100%;
+  }
 }
